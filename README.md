@@ -1,8 +1,9 @@
-First
-git clone this project.
+![image](https://github.com/HungYiChun/CodeFirstFromDB/blob/master/CodeFirst.png?raw=true)
 
-Second
-run this project and go http:{ip}:port/Role/Index link.
+Need: Install MSSQL and provide services on localhost.
 
-Third
-open your DB to check CodeFirstDB Table.
+First git clone this project.
+
+Second run this project by Visual studio (build vs2015).
+
+First time, Clicking on the Account List will automatically create Database.
