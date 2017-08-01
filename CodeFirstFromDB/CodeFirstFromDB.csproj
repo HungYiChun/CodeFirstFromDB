@@ -165,21 +165,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707240355044_InitialModel.cs" />
-    <Compile Include="Migrations\201707240355044_InitialModel.Designer.cs">
-      <DependentUpon>201707240355044_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201708010728054_InitCodeFirstDB.cs" />
+    <Compile Include="Migrations\201708010728054_InitCodeFirstDB.Designer.cs">
+      <DependentUpon>201708010728054_InitCodeFirstDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\CodeFirstDBModel.cs" />
-    <Compile Include="Models\Roles.cs" />
-    <Compile Include="Models\Status.cs" />
-    <Compile Include="Models\Users.cs" />
-    <Compile Include="Models\ViewUserDetail.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\CodeFirstModel.cs" />
+    <Compile Include="Models\InitDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -231,14 +229,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Roles\Create.cshtml" />
-    <Content Include="Views\Roles\Delete.cshtml" />
-    <Content Include="Views\Roles\Details.cshtml" />
-    <Content Include="Views\Roles\Edit.cshtml" />
-    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Accounts\Create.cshtml" />
+    <Content Include="Views\Accounts\Delete.cshtml" />
+    <Content Include="Views\Accounts\Details.cshtml" />
+    <Content Include="Views\Accounts\Edit.cshtml" />
+    <Content Include="Views\Accounts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -250,8 +246,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707240355044_InitialModel.resx">
-      <DependentUpon>201707240355044_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708010728054_InitCodeFirstDB.resx">
+      <DependentUpon>201708010728054_InitCodeFirstDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

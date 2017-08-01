@@ -10,107 +10,107 @@ using CodeFirstFromDB.Models;
 
 namespace CodeFirstFromDB.Controllers
 {
-    public class RolesController : Controller
+    public class AccountsController : Controller
     {
-        private CodeFirstDBModel db = new CodeFirstDBModel();
+        private CodeFirstModel db = new CodeFirstModel();
 
-        // GET: Roles
+        // GET: Accounts
         public ActionResult Index()
         {
-            return View(db.Roles.ToList());
+            return View(db.Account.ToList());
         }
 
-        // GET: Roles/Details/5
+        // GET: Accounts/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Roles roles = db.Roles.Find(id);
-            if (roles == null)
+            Account account = db.Account.Find(id);
+            if (account == null)
             {
                 return HttpNotFound();
             }
-            return View(roles);
+            return View(account);
         }
 
-        // GET: Roles/Create
+        // GET: Accounts/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Roles/Create
+        // POST: Accounts/Create
         // 若要免於過量張貼攻擊，請啟用想要繫結的特定屬性，如需
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,RoleName")] Roles roles)
+        public ActionResult Create([Bind(Include = "Id,Username,Password,Name,Email,Sex,Company,Position,Phone")] Account account)
         {
             if (ModelState.IsValid)
             {
-                db.Roles.Add(roles);
+                db.Account.Add(account);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(roles);
+            return View(account);
         }
 
-        // GET: Roles/Edit/5
+        // GET: Accounts/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Roles roles = db.Roles.Find(id);
-            if (roles == null)
+            Account account = db.Account.Find(id);
+            if (account == null)
             {
                 return HttpNotFound();
             }
-            return View(roles);
+            return View(account);
         }
 
-        // POST: Roles/Edit/5
+        // POST: Accounts/Edit/5
         // 若要免於過量張貼攻擊，請啟用想要繫結的特定屬性，如需
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,RoleName")] Roles roles)
+        public ActionResult Edit([Bind(Include = "Id,Username,Password,Name,Email,Sex,Company,Position,Phone")] Account account)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(roles).State = EntityState.Modified;
+                db.Entry(account).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(roles);
+            return View(account);
         }
 
-        // GET: Roles/Delete/5
+        // GET: Accounts/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Roles roles = db.Roles.Find(id);
-            if (roles == null)
+            Account account = db.Account.Find(id);
+            if (account == null)
             {
                 return HttpNotFound();
             }
-            return View(roles);
+            return View(account);
         }
 
-        // POST: Roles/Delete/5
+        // POST: Accounts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Roles roles = db.Roles.Find(id);
-            db.Roles.Remove(roles);
+            Account account = db.Account.Find(id);
+            db.Account.Remove(account);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

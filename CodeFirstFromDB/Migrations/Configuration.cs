@@ -5,14 +5,14 @@ namespace CodeFirstFromDB.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CodeFirstFromDB.Models.CodeFirstDBModel>
+    internal sealed class Configuration : DbMigrationsConfiguration<CodeFirstFromDB.Models.CodeFirstModel>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(CodeFirstFromDB.Models.CodeFirstDBModel context)
+        protected override void Seed(CodeFirstFromDB.Models.CodeFirstModel context)
         {
             //  This method will be called after migrating to the latest version.
 
